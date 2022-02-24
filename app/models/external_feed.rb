@@ -153,7 +153,7 @@ class ExternalFeed < ActiveRecord::Base
           title: item.title.to_s,
           message: description,
           url: item.links.alternate.to_s,
-          author_name: author.name,
+          author_name: author.displayName,
           author_url: author.uri,
           author_email: author.email
         )
@@ -172,7 +172,7 @@ class ExternalFeed < ActiveRecord::Base
         posted_at: item.published,
         url: item.links.alternate.to_s,
         user: user,
-        author_name: author.name,
+        author_name: author.displayName,
         author_url: author.uri,
         author_email: author.email,
         uuid: uuid
